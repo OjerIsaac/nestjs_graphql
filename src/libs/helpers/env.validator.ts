@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
 
 export const envVarsSchema = Joi.object({
-  PORT: Joi.number().default(3000),
+  PORT: Joi.optional().default(3000),
 
   NODE_ENV: Joi.string().required(),
 

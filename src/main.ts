@@ -10,7 +10,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const logger = new Logger('Nest Application');
 
-  const allowedOrigins = ['http://localhost:3000', 'http://[::1]:1011'];
+  const allowedOrigins = ['http://localhost:3000', 'http://[::1]:3000'];
 
   const corsOptions: CorsOptions = {
     origin: (origin, callback) => {
@@ -33,7 +33,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const port = configService.get('PORT');
 
-  await app.listen(port);
+  await app.listen(port || 3000);
   logger.log(`Application is running on: ${await app.getUrl()}`);
 }
 
