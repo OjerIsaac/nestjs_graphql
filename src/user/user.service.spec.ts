@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserService } from './user.service';
-import { PrismaService } from '../../prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { UnauthorizedException, ConflictException } from '@nestjs/common';
+import { UserService } from './user.service';
+import { PrismaService } from '../../prisma/prisma.service';
 
 const mockPrismaService = () => ({
   user: {
